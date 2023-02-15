@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 12:24:38 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/15 14:29:30 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,23 +99,6 @@ static void	print_stack_xy(t_lst *stack)
 	}
 }
 
-static void	move_number(t_lst *stack, int length)
-{
-	int	i;
-
-	i = 0;
-	while (++i <= length)
-	{
-		usleep(10000);
-		mvprintw(stack->y, stack->x, " ");
-		stack->x++;
-		mvprintw(stack->y, stack->x, "%d", stack->num);
-		refresh();
-	}
-	
-
-}
-
 int	main(int argc, char **argv)
 {
 	t_lst	*stack_a;
@@ -129,13 +112,11 @@ int	main(int argc, char **argv)
 
 	put_stack(stack_a);
 	refresh();
-	move_number(lst_find_by_index(stack_a, 1), 60);
-
-	move_number(lst_find_by_index(stack_a, 3), 60);
-
-	move_number(lst_find_by_index(stack_a, 7), 60);
-	move_number(lst_find_by_index(stack_a, 2), 60);
-	move_number(lst_find_by_index(stack_a, 4), 60);
+	move_number(lst_find_by_index(stack_a, 1), 30, 'r');
+	move_number(lst_find_by_index(stack_a, 1), 12, 'b');
+	move_number(lst_find_by_index(stack_a, 1), 40, 'l');
+	move_number(lst_find_by_index(stack_a, 1), 12, 't');
+	move_number(lst_find_by_index(stack_a, 1), 10, 'r');
 	sleep(5);
 	endwin();
 	print_stack_xy(stack_a);

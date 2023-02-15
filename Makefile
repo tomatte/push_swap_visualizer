@@ -28,6 +28,7 @@ SRC_PUSH	= 	lst_new.c \
 				print_lst.c \
 
 SRC			=	push_swap_visualizer.c \
+				move_number.c \
 
 
 
@@ -40,11 +41,12 @@ LIBFT		=	./libft/libftprintf.a
 CFLAGS		=	-I./ -lncurses
 
 VPATH		=	./src \
-				./src/push_functions \
-				./src/push_functions/error \
-				./src/push_functions/instructions \
-				./src/push_functions/list \
-				./src/push_functions/utils \
+				./src/push_src \
+				./src/push_src/error \
+				./src/push_src/instructions \
+				./src/push_src/list \
+				./src/push_src/utils \
+				./src/visualizer_src \
 
 NAME		=	visualizer
 

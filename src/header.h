@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:55:43 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@
 # include <term.h>
 # include <unistd.h>
 # include <time.h>
-# include "./push_functions/push_swap.h"
+# include "./push_src/push_swap.h"
 # define BOXSIZE 12
 # define VBOXSTART 3
 # define HBOXSTART 10
+
+void	move_number(t_lst *stack, int length, char direction);
 
 #endif
