@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   print_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/02/15 10:41:18 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/02/15 10:41:23 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
-
-#endif
+void	print_lst(t_lst *lst)
+{
+	if (!lst)
+		ft_printf("Empty List\n");
+	lst = lst_first(lst);
+	while (lst)
+	{
+		ft_printf("%d\t(%d)\n", lst->num, lst->index);
+		lst = lst->next;
+	}
+	ft_printf("\n");
+}

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2022/06/29 22:08:44 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/06/30 16:03:17 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
 # include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+# include <stdlib.h>
+# include <stddef.h>
+
+char	*get_next_line(int fd);
+char	*find_chr(char **str, char c);
+char	*m_join(char *s1, char *buff, ssize_t b_size);
+void	remove_first_line(char **storage);
+char	*strdup_flex(char	*str, char end, char *a_end);
+void	del(char	**mem);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1024
+# endif
 
 #endif

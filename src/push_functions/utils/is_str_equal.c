@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/02/13 08:27:34 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/02/13 08:32:29 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
-
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
-
-#endif
+int	is_str_equal(char *s1, char *s2)
+{
+	if (!s1 || !s2)
+		return (0);
+	while (*s1 && *s2)
+	{
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
+	}
+	return (*s1 == *s2);
+}

@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lst_find_by_num.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/01/06 13:13:35 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/01/23 19:12:16 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
-
-#endif
+t_lst	*lst_find_by_num(t_lst *lst, int num)
+{
+	lst = lst_first(lst);
+	while (lst)
+	{
+		if (lst->num == num)
+			return (lst);
+		lst = lst->next;
+	}
+	return (NULL);
+}

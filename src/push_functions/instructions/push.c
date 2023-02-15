@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/01/23 20:10:18 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/01/23 22:31:27 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+void	push(t_lst **dest, t_lst **src)
+{
+	t_lst	*node;
 
-#endif
+	if (src == NULL || *src == NULL)
+		return ;
+	if (dest == NULL)
+		return ;
+	node = lst_remove_first(src);
+	lst_add_front(dest, node);
+}
+
+void	pa(t_lst **a, t_lst **b)
+{
+	push(a, b);
+	ft_printf("pa\n");
+}
+
+void	pb(t_lst **b, t_lst **a)
+{
+	push(b, a);
+	ft_printf("pb\n");
+}

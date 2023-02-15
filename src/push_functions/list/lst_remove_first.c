@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lst_get_first.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/01/23 20:14:28 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/01/23 20:19:38 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+t_lst	*lst_remove_first(t_lst **lst)
+{
+	t_lst	*removed;
+	t_lst	*new_first;
 
-#endif
+	if (lst == NULL || *lst == NULL)
+		return (NULL);
+	removed = lst_first(*lst);
+	new_first = removed->next;
+	removed->next = NULL;
+	removed->prev = NULL;
+	if (new_first)
+		new_first->prev = NULL;
+	*lst = new_first;
+	return (removed);
+}

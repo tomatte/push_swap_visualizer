@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   ft_str_push_char.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2022/12/12 15:16:41 by dbrandao          #+#    #+#             */
+/*   Updated: 2022/12/12 15:18:01 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "./libft.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+void	ft_str_push_char(char **str, char c)
+{
+	size_t	len;
+	char	*s;
+	char	*new;
 
-#endif
+	s = *str;
+	if (!str || !s || !c)
+		return ;
+	len = ft_strlen(s);
+	new = (char *) malloc(len + 2);
+	if (!new)
+		return ;
+	ft_strlcpy(new, s, len + 1);
+	new[len] = c;
+	new[len + 1] = '\0';
+	free(s);
+	*str = new;
+}

@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/01/23 22:15:44 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/01/23 22:34:08 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+void	rotate(t_lst **lst)
+{
+	t_lst	*node;
 
-#endif
+	node = lst_remove_first(lst);
+	lst_push(lst, node);
+}
+
+void	ra(t_lst **a)
+{
+	rotate(a);
+	ft_printf("ra\n");
+}
+
+void	rb(t_lst **b)
+{
+	rotate(b);
+	ft_printf("rb\n");
+}
+
+void	rr(t_lst **a, t_lst **b)
+{
+	rotate(a);
+	rotate(b);
+	ft_printf("rr\n");
+}

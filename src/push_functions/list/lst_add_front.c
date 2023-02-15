@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   header.h                                           :+:      :+:    :+:   */
+/*   lst_add_front.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 11:04:14 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/01/23 20:40:03 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/01/23 20:49:44 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#include "../push_swap.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <ncurses.h>
-# include <term.h>
-# include <unistd.h>
-# include <time.h>
-# include "./push_functions/push_swap.h"
-# define BOXSIZE 12
-# define VBOXSTART 3
-# define HBOXSTART 10
+void	lst_add_front(t_lst **lst, t_lst *node)
+{
+	t_lst	*second;
+	t_lst	*first;
 
-#endif
+	if (lst == NULL || node == NULL)
+		return ;
+	if (*lst == NULL)
+	{
+		*lst = node;
+		return ;
+	}
+	second = lst_first(*lst);
+	first = node;
+	second->prev = first;
+	first->next = second;
+	first->prev = NULL;
+	*lst = first;
+}
