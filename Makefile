@@ -30,6 +30,8 @@ SRC_PUSH	= 	lst_new.c \
 SRC			=	push_swap_visualizer.c \
 				move_number.c \
 				put_stack.c \
+				push_a.c \
+				push_b.c \
 
 
 
@@ -48,6 +50,7 @@ VPATH		=	./src \
 				./src/push_src/list \
 				./src/push_src/utils \
 				./src/visualizer_src \
+				./src/visualizer_src/execute_move \
 
 NAME		=	visualizer
 

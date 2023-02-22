@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/21 21:26:19 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:22:32 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,22 @@ int	main(int argc, char **argv)
 	fill_stacks(&stack_a, &stack_b, argc, argv);
 	init_curses();
 
+	push(&stack_b, &stack_a);
+	push(&stack_b, &stack_a);
+	push(&stack_b, &stack_a);
+	push(&stack_b, &stack_a);
 	put_stack(stack_a, 3, 10);
-	put_stack(stack_a, 3, 40);
+	put_stack(stack_b, 3, 40);
+	sleep(1);
+	push_a(&stack_a, &stack_b);
+	push_a(&stack_a, &stack_b);
+	push_a(&stack_a, &stack_b);
+	push_b(&stack_b, &stack_a);
+	push_b(&stack_b, &stack_a);
+	push_a(&stack_a, &stack_b);
+	push_b(&stack_b, &stack_a);
+	push_b(&stack_b, &stack_a);
+	push_b(&stack_b, &stack_a);
 	refresh();
 /* 	move_number(lst_find_by_index(stack_a, 1), 30, 'r');
 	move_number(lst_find_by_index(stack_a, 1), 12, 'b');

@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/21 21:27:18 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/21 22:21:21 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,9 @@
 
 void	move_number(t_lst *stack, int length, char direction);
 void	put_stack(t_lst *stack, int y_start, int x_start);
+
+//execute_move
+void	push_a(t_lst **a, t_lst **b);
+void	push_b(t_lst **b, t_lst **a);
 
 #endif
