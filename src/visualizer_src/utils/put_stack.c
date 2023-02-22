@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 21:25:21 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 09:33:28 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:03:28 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ void	put_stack(t_lst *stack, int y_start, int x_start)
 	int		y;
 	int		x;
 	int		middle_write;
+	char	cleaning[] = "          ";
 	
 	y = y_start;
 	stack = lst_first(stack);
 	while (stack)
 	{
+		mvprintw(y, x_start, "%s", cleaning);
 		x = get_boxmiddle(stack->num, x_start);
 		mvprintw(y, x, "%d", stack->num);
 		stack->x = x;

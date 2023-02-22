@@ -26,7 +26,6 @@ SRC_PUSH	= 	lst_new.c \
 				get_position.c \
 				first_ab.c \
 				print_lst.c \
-				rotate_v.c \
 
 SRC			=	push_swap_visualizer.c \
 				move_number.c \
@@ -36,6 +35,10 @@ SRC			=	push_swap_visualizer.c \
 				swap_v.c \
 				num_len.c \
 				spaces_wipe.c \
+				reverse_a.c \
+				rotate_a.c \
+				reverse_b.c \
+				rotate_b.c \
 
 
 

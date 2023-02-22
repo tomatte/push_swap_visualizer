@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_v.c                                         :+:      :+:    :+:   */
+/*   reverse_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 09:10:18 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 09:38:23 by dbrandao         ###   ########.fr       */
+/*   Created: 2023/02/22 09:44:38 by dbrandao          #+#    #+#             */
+/*   Updated: 2023/02/22 10:07:13 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header.h"
 
-
-
-void	rotate_v(t_lst **stack)
+void	reverse_b(t_lst **stack)
 {
-	int		move_bottom;
 	t_lst	*node;
 
-	node = lst_remove_first(stack);
-	move_bottom = lst_size(*stack);
-	move_number(node, 10, 'r');
-	move_number(node, move_bottom, 'b');
-	spaces_wipe(lst_last(*stack));
-	put_stack(*stack, YSTACK_A, XSTACK_A);
+	node = lst_remove_last(stack);
+	*stack = lst_first(*stack);
 	move_number(node, 10, 'l');
-	lst_push(stack, node);
+	move_number(node, lst_size(*stack), 't');
+	spaces_wipe(lst_first(*stack));
+	put_stack(*stack, YSTACK_B + 1, XSTACK_B);
+	move_number(node, 10, 'r');
+	lst_add_front(stack, node);
 }
