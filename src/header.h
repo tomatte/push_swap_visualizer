@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 13:55:43 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:27:18 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@
 # define HBOXSTART 10
 
 void	move_number(t_lst *stack, int length, char direction);
+void	put_stack(t_lst *stack, int y_start, int x_start);
 
 #endif

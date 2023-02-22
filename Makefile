@@ -29,6 +29,7 @@ SRC_PUSH	= 	lst_new.c \
 
 SRC			=	push_swap_visualizer.c \
 				move_number.c \
+				put_stack.c \
 
 
 

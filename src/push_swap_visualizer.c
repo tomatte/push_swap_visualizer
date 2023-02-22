@@ -6,27 +6,13 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 14:29:30 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/21 21:26:19 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-//start writing (meio - index)
-//criar uma funcao pra automatizar a escrita no meio do NUMBER_BOX
-//NUMBER_BOX é uma caixa imaginaria em que o numero está escrito (talvez essa box seja delimitada por um background-color)
-
-int	get_boxmiddle(int number)
-{
-	char	str_num[20];
-	int		middle_write;
-	
-	sprintf(str_num, "%d", number);
-	middle_write = (BOXSIZE >> 1) - (strlen(str_num) >> 1);
-	return (middle_write + HBOXSTART);
-}
-
-static void	put_numbers()
+/* static void	put_numbers()
 {
 	int		numbers;
 	int		y;
@@ -48,25 +34,7 @@ static void	put_numbers()
 		mvprintw(y, get_boxmiddle(rand_num), "%d", rand_num);
 	}
 }
-
-static void	put_stack(t_lst *stack)
-{
-	int		y;
-	int		x;
-	int		middle_write;
-	
-	y = VBOXSTART;
-	stack = lst_first(stack);
-	while (stack)
-	{
-		x = get_boxmiddle(stack->num);
-		mvprintw(y, x, "%d", stack->num);
-		stack->x = x;
-		stack->y = y;
-		stack = stack->next;
-		y++;
-	}
-}
+ */
 
 static void	init_curses(void)
 {
@@ -110,13 +78,14 @@ int	main(int argc, char **argv)
 	fill_stacks(&stack_a, &stack_b, argc, argv);
 	init_curses();
 
-	put_stack(stack_a);
+	put_stack(stack_a, 3, 10);
+	put_stack(stack_a, 3, 40);
 	refresh();
-	move_number(lst_find_by_index(stack_a, 1), 30, 'r');
+/* 	move_number(lst_find_by_index(stack_a, 1), 30, 'r');
 	move_number(lst_find_by_index(stack_a, 1), 12, 'b');
 	move_number(lst_find_by_index(stack_a, 1), 40, 'l');
 	move_number(lst_find_by_index(stack_a, 1), 12, 't');
-	move_number(lst_find_by_index(stack_a, 1), 10, 'r');
+	move_number(lst_find_by_index(stack_a, 1), 10, 'r'); */
 	sleep(5);
 	endwin();
 	print_stack_xy(stack_a);
