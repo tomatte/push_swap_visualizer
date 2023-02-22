@@ -26,6 +26,7 @@ SRC_PUSH	= 	lst_new.c \
 				get_position.c \
 				first_ab.c \
 				print_lst.c \
+				rotate_v.c \
 
 SRC			=	push_swap_visualizer.c \
 				move_number.c \
@@ -33,6 +34,8 @@ SRC			=	push_swap_visualizer.c \
 				push_a.c \
 				push_b.c \
 				swap_v.c \
+				num_len.c \
+				spaces_wipe.c \
 
 
 
@@ -52,6 +55,7 @@ VPATH		=	./src \
 				./src/push_src/utils \
 				./src/visualizer_src \
 				./src/visualizer_src/execute_move \
+				./src/visualizer_src/utils \
 
 NAME		=	visualizer
 
