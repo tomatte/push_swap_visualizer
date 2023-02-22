@@ -6,26 +6,11 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:43:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/15 14:28:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:33:36 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
-
-static int	num_len(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n <= 0)
-		i++;
-	while (n)
-	{
-		n = n / 10;
-		i++;
-	}
-	return (i);
-}
+#include "../../header.h"
 
 static void	move_left(t_lst *stack, int length)
 {
@@ -35,7 +20,7 @@ static void	move_left(t_lst *stack, int length)
 	i = 0;
 	while (++i <= length)
 	{
-		usleep(10000);
+		usleep(20000);
 		x_clear = stack->x + num_len(stack->num) - 1;
 		mvprintw(stack->y, x_clear, " ");
 		stack->x--;
@@ -51,25 +36,11 @@ static void	move_right(t_lst *stack, int length)
 	i = 0;
 	while (++i <= length)
 	{
-		usleep(10000);
+		usleep(20000);
 		mvprintw(stack->y, stack->x, " ");
 		stack->x++;
 		mvprintw(stack->y, stack->x, "%d", stack->num);
 		refresh();
-	}
-}
-
-static void	spaces_wipe(t_lst *stack)
-{
-	int	len;
-	int	i;
-
-	len = num_len(stack->num);
-	i = 0;
-	while (i < len)
-	{
-		mvprintw(stack->y, stack->x + i, " ");
-		i++;
 	}
 }
 
@@ -80,7 +51,7 @@ static void	move_bottom(t_lst *stack, int length)
 	i = 0;
 	while (++i <= length)
 	{
-		usleep(20000);
+		usleep(40000);
 		spaces_wipe(stack);
 		stack->y++;
 		mvprintw(stack->y, stack->x, "%d", stack->num);
@@ -95,7 +66,7 @@ static void	move_top(t_lst *stack, int length)
 	i = 0;
 	while (++i <= length)
 	{
-		usleep(20000);
+		usleep(40000);
 		spaces_wipe(stack);
 		stack->y--;
 		mvprintw(stack->y, stack->x, "%d", stack->num);

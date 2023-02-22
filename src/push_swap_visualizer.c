@@ -6,35 +6,11 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/21 22:22:32 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:40:46 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-/* static void	put_numbers()
-{
-	int		numbers;
-	int		y;
-	int		x;
-	int		box_end;
-	int		middle_write;
-	int		rand_num;
-	
-
-	box_end = HBOXSTART + BOXSIZE;
-	numbers = -10;
-	y = VBOXSTART;
-	x = HBOXSTART - 1;
-	while (++y <= 100)
-	{
-		rand_num = rand();
-		if (rand_num % 2 == 0)
-			rand_num %= 10000;
-		mvprintw(y, get_boxmiddle(rand_num), "%d", rand_num);
-	}
-}
- */
 
 static void	init_curses(void)
 {
@@ -77,32 +53,16 @@ int	main(int argc, char **argv)
 	codes = read_instructions();
 	fill_stacks(&stack_a, &stack_b, argc, argv);
 	init_curses();
-
 	push(&stack_b, &stack_a);
 	push(&stack_b, &stack_a);
 	push(&stack_b, &stack_a);
-	push(&stack_b, &stack_a);
-	put_stack(stack_a, 3, 10);
-	put_stack(stack_b, 3, 40);
-	sleep(1);
-	push_a(&stack_a, &stack_b);
-	push_a(&stack_a, &stack_b);
-	push_a(&stack_a, &stack_b);
-	push_b(&stack_b, &stack_a);
-	push_b(&stack_b, &stack_a);
-	push_a(&stack_a, &stack_b);
-	push_b(&stack_b, &stack_a);
-	push_b(&stack_b, &stack_a);
-	push_b(&stack_b, &stack_a);
+	put_stack(stack_a, YSTACK_A, XSTACK_A);
+	put_stack(stack_b, YSTACK_B, XSTACK_B);
 	refresh();
-/* 	move_number(lst_find_by_index(stack_a, 1), 30, 'r');
-	move_number(lst_find_by_index(stack_a, 1), 12, 'b');
-	move_number(lst_find_by_index(stack_a, 1), 40, 'l');
-	move_number(lst_find_by_index(stack_a, 1), 12, 't');
-	move_number(lst_find_by_index(stack_a, 1), 10, 'r'); */
-	sleep(5);
+	//execute_moves(&stack_a, &stack_b, codes);
+	rotate_v(&stack_a);
+	sleep(6);
 	endwin();
-	print_stack_xy(stack_a);
 	clear_memory(stack_a, stack_b, codes);
 	return (0);
 }

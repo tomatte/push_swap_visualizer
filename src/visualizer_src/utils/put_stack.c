@@ -6,11 +6,11 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 21:25:21 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/21 21:27:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:33:28 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header.h"
+#include "../../header.h"
 
 //start writing (meio - index)
 //criar uma funcao pra automatizar a escrita no meio do NUMBER_BOX
