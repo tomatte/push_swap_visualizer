@@ -32,6 +32,7 @@ SRC			=	push_swap_visualizer.c \
 				put_stack.c \
 				push_a.c \
 				push_b.c \
+				swap_v.c \
 
 
 

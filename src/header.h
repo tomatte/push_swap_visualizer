@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/21 22:21:21 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:08:03 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@
 # define BOXSIZE 12
 # define VBOXSTART 3
 # define HBOXSTART 10
+# define YSTACK_B 3
+# define XSTACK_B 40
+# define YSTACK_A 3
+# define XSTACK_A 10
 
 void	move_number(t_lst *stack, int length, char direction);
 void	put_stack(t_lst *stack, int y_start, int x_start);
@@ -31,5 +35,6 @@ void	put_stack(t_lst *stack, int y_start, int x_start);
 //execute_move
 void	push_a(t_lst **a, t_lst **b);
 void	push_b(t_lst **b, t_lst **a);
+void	swap_v(t_lst **a);
 
 #endif
