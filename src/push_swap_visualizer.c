@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 09:40:46 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:20:24 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,9 @@ int	main(int argc, char **argv)
 	codes = read_instructions();
 	fill_stacks(&stack_a, &stack_b, argc, argv);
 	init_curses();
-	push(&stack_b, &stack_a);
-	push(&stack_b, &stack_a);
-	push(&stack_b, &stack_a);
 	put_stack(stack_a, YSTACK_A, XSTACK_A);
-	put_stack(stack_b, YSTACK_B, XSTACK_B);
 	refresh();
-	//execute_moves(&stack_a, &stack_b, codes);
-	rotate_v(&stack_a);
+	execute_moves(&stack_a, &stack_b, codes);
 	sleep(6);
 	endwin();
 	clear_memory(stack_a, stack_b, codes);

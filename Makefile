@@ -39,6 +39,7 @@ SRC			=	push_swap_visualizer.c \
 				rotate_a.c \
 				reverse_b.c \
 				rotate_b.c \
+				execute_moves.c \
 
 
 
