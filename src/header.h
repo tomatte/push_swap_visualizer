@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:02:33 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:06:24 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void 	reverse_reverse(t_lst **a, t_lst **b);
 //utils
 int		num_len(int n);
 void	spaces_wipe(t_lst *stack);
+void	mutual_move(t_lst *node_a, t_lst *node_b, int len_a, int len_b, char direction);
 
 #endif
