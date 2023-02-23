@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:42:16 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:03:05 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:17:01 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	execute(t_lst **a, t_lst **b, char code)
 		swap_v(a);
 	else if (code == SB)
 		swap_v(b);
+	else if (code == SS)
+		swap_swap(a, b);
 	else if (code == RA)
 		rotate_a(a);
 	else if (code == RB)
