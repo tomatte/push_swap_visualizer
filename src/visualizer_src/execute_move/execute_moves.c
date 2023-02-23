@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:42:16 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 13:50:38 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:03:05 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	execute(t_lst **a, t_lst **b, char code)
 		reverse_a(a);
 	else if (code == RRB)
 		reverse_b(b);
+	else if (code == RRR)
+		reverse_reverse(a, b);
 	else if (code == PA)
 		push_a(a, b);
 	else if (code == PB)
