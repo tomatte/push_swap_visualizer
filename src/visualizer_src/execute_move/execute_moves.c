@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:42:16 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 10:20:43 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:50:38 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void	execute(t_lst **a, t_lst **b, char code)
 		rotate_a(a);
 	else if (code == RB)
 		rotate_b(b);
+	else if (code == RR)
+		rotate_rotate(a, b);
 	else if (code == RRA)
 		reverse_a(a);
 	else if (code == RRB)

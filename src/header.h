@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 10:20:01 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:49:58 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	rotate_b(t_lst **stack);
 void	reverse_b(t_lst **stack);
 void	reverse_a(t_lst **stack);
 void	execute_moves(t_lst **a, t_lst **b, char *codes);
+void	rotate_rotate(t_lst **a, t_lst **b);
 
 //utils
 int		num_len(int n);
