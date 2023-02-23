@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:16:30 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/23 14:34:04 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@
 # define XSTACK_B 40
 # define YSTACK_A 3
 # define XSTACK_A 10
-
-void	move_number(t_lst *stack, int length, char direction);
-void	put_stack(t_lst *stack, int y_start, int x_start);
+# define DEFAULT_DURATION 20000
 
 //execute_move
 void	push_a(t_lst **a, t_lst **b);
@@ -46,6 +44,8 @@ void 	reverse_reverse(t_lst **a, t_lst **b);
 void	swap_swap(t_lst **a, t_lst **b);
 
 //utils
+void	put_stack(t_lst *stack, int y_start, int x_start);
+void	move_number(t_lst *stack, int length, char direction, int duration);
 int		num_len(int n);
 void	spaces_wipe(t_lst *stack);
 void	mutual_move(t_lst *node_a, t_lst *node_b, int len_a, int len_b, char direction);

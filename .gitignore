@@ -2,3 +2,5 @@
 *.o
 *temp*
 visualizer
+push_swap
+.gitignore
