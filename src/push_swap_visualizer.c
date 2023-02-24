@@ -6,16 +6,24 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:38 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/22 10:20:24 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/24 09:09:25 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
+static void	start_colors(void)
+{
+	start_color();
+	use_default_colors();
+	init_pair(1, COLOR_WHITE, DARK_BLUE);
+}
+
 static void	init_curses(void)
 {
 	initscr();
-	start_color();
+	start_colors();
+	cbreak();
 	noecho();
 	curs_set(FALSE);
 }
@@ -56,7 +64,7 @@ int	main(int argc, char **argv)
 	put_stack(stack_a, YSTACK_A, XSTACK_A);
 	refresh();
 	execute_moves(&stack_a, &stack_b, codes);
-	sleep(6);
+	getch();
 	endwin();
 	clear_memory(stack_a, stack_b, codes);
 	return (0);

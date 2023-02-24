@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 17:30:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:34:04 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:04:43 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define YSTACK_A 3
 # define XSTACK_A 10
 # define DEFAULT_DURATION 20000
+# define DARK_BLUE 20
 
 //execute_move
 void	push_a(t_lst **a, t_lst **b);
@@ -49,5 +50,6 @@ void	move_number(t_lst *stack, int length, char direction, int duration);
 int		num_len(int n);
 void	spaces_wipe(t_lst *stack);
 void	mutual_move(t_lst *node_a, t_lst *node_b, int len_a, int len_b, char direction);
+void	print_colored(t_lst *node);
 
 #endif

@@ -44,6 +44,7 @@ SRC			=	push_swap_visualizer.c \
 				reverse_reverse.c \
 				mutual_move.c \
 				swap_swap.c \
+				print_colored.c \
 
 
 
