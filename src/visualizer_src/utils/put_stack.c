@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 21:25:21 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/24 10:04:11 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:12:44 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	put_stack(t_lst *stack, int y_start, int x_start)
 	{
 		stack->x = get_boxmiddle(stack->num, x_start);
 		stack->y = y;
-		print_colored(stack);
+		print_colored(stack, 1);
 		stack = stack->next;
 		y++;
 	}

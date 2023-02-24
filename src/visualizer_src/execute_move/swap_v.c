@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 08:44:56 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:30:32 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:01:48 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	move_left_right(t_lst *item1, t_lst *item2, int length)
 void	swap_v(t_lst **stack)
 {
 	*stack = lst_first(*stack);
-	move_left_right((*stack)->next, *stack, 5);
+	move_left_right((*stack)->next, *stack, BOXSIZE + 1);
 	move_number(*stack, 1, 'b', DEFAULT_DURATION);
 	move_number((*stack)->next, 1, 't', DEFAULT_DURATION);
-	move_left_right(*stack, (*stack)->next, 5);
+	move_left_right(*stack, (*stack)->next, BOXSIZE + 1);
 	swap(stack);
 }

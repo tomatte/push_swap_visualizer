@@ -6,7 +6,7 @@
 /*   By: dbrandao <dbrandao@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:43:57 by dbrandao          #+#    #+#             */
-/*   Updated: 2023/02/23 14:25:01 by dbrandao         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:00:23 by dbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ static void	move_left(t_lst *stack, int length, int duration)
 	{
 		usleep(duration);
 		x_clear = stack->x + num_len(stack->num) - 1;
-		mvprintw(stack->y, x_clear, " ");
+		spaces_wipe(stack);
 		stack->x--;
-		mvprintw(stack->y, stack->x, "%d", stack->num);
+		print_colored(stack, 1);
 		refresh();
 	}
 }
@@ -37,9 +37,9 @@ static void	move_right(t_lst *stack, int length, int duration)
 	while (++i <= length)
 	{
 		usleep(duration);
-		mvprintw(stack->y, stack->x, " ");
+		spaces_wipe(stack);
 		stack->x++;
-		mvprintw(stack->y, stack->x, "%d", stack->num);
+		print_colored(stack, 1);
 		refresh();
 	}
 }
@@ -54,7 +54,7 @@ static void	move_bottom(t_lst *stack, int length, int duration)
 		usleep(duration * 2);
 		spaces_wipe(stack);
 		stack->y++;
-		mvprintw(stack->y, stack->x, "%d", stack->num);
+		print_colored(stack, 1);
 		refresh();
 	}
 }
@@ -69,7 +69,7 @@ static void	move_top(t_lst *stack, int length, int duration)
 		usleep(duration  * 2);
 		spaces_wipe(stack);
 		stack->y--;
-		mvprintw(stack->y, stack->x, "%d", stack->num);
+		print_colored(stack, 1);
 		refresh();
 	}
 }
